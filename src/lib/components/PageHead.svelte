@@ -13,7 +13,6 @@
 
 <header class="page-head">
 	<div class="shell">
-		<p class="eyebrow">{eyebrow}</p>
 		<h1 class="br-wide">{@render title()}</h1>
 		{#if lede}
 			<p class="copy">{lede}</p>

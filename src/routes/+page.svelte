@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Innovation Ireland — Ireland's community for young people who build</title>
+	<title>Innovation Ireland - Ireland's community for young people who build</title>
 	<meta
 		name="description"
 		content="Innovation Ireland is a nonprofit community of 100+ young builders across Ireland. Weekly communities, hackathons, workshops and student-led projects."

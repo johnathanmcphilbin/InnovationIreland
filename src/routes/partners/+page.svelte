@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Partners — Innovation Ireland</title>
+	<title>Partners - Innovation Ireland</title>
 	<meta
 		name="description"
 		content="Innovation Ireland works with companies and organisations who want the next generation of Irish builders to exist. Rooms, hardware, mentors, hackathon costs."

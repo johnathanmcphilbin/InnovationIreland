@@ -1,4 +1,4 @@
-/* Real photography. One entry per file in /static/img — every one of these is
+/* Real photography. One entry per file in /static/img - every one of these is
    an actual Innovation Ireland photo, so captions stick to what's in the frame. */
 
 export type Photo = {
@@ -26,7 +26,7 @@ export const photos = {
 	moyneVilla: {
 		src: '/img/moyne-villa-day-one.jpg',
 		alt: 'Sunset over the floodlights and pitch at Moyne Villa, the football club whose clubhouse we started in',
-		caption: 'Moyne Villa — the club that gave us a room'
+		caption: 'Moyne Villa, the club that gave us a room'
 	},
 	futurehackRoom: {
 		src: '/img/futurehack-room.jpg',

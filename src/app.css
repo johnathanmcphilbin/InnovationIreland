@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Innovation Ireland — base styles & design tokens
+   Innovation Ireland - base styles & design tokens
    Heavy display type, cream paper, navy ink, one green, a little orange.
    No gradients. Anywhere. Ever.
    ========================================================================== */
@@ -178,7 +178,7 @@ button {
 	padding-block: var(--section-y-lg);
 }
 
-/* the seam between two stacked sections — the site's structural rhythm */
+/* the seam between two stacked sections - the site's structural rhythm */
 .section + .section {
 	border-top: 2.5px solid var(--navy);
 }
@@ -188,7 +188,7 @@ button {
 	padding-top: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-/* headings whose hand-set line breaks only work on wide screens —
+/* headings whose hand-set line breaks only work on wide screens -
    on a phone the text wraps on its own and the breaks make orphans */
 @media (max-width: 700px) {
 	.br-wide br {

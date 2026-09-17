@@ -1,5 +1,5 @@
 <script lang="ts">
-	/* Filler squiggle. Used sparingly — it means nothing, so it earns very little space. */
+	/* Filler squiggle. Used sparingly - it means nothing, so it earns very little space. */
 	let {
 		color = 'var(--navy)',
 		thickness = 2.4,

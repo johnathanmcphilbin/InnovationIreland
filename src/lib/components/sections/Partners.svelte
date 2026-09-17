@@ -1,13 +1,12 @@
 <script lang="ts">
 	import Button from '../Button.svelte';
-	import RoughFrame from '../art/RoughFrame.svelte';
 	import StarDoodle from '../art/StarDoodle.svelte';
 	import PhotoSlot from '../PhotoSlot.svelte';
 	import { partners, partnerAsks } from '$lib/data/partners';
 	import { links } from '$lib/data/site';
 	import { photos } from '$lib/data/photos';
 
-	/* The page title and pitch live in the page head — this is the body. */
+	/* The page title and pitch live in the page head - this is the body. */
 </script>
 
 <section class="section partners" id="partners">
@@ -42,24 +41,27 @@
 		</h2>
 
 		<ul class="logos">
-			{#each partners as p, i (p.kind + i)}
+			{#each partners as p, i (p.name)}
 				<li style:--tilt="{(i % 3) - 1}deg">
-					<RoughFrame thickness={2} color="var(--rule-strong)" />
-					{#if p.href}
-						<a class="logo-link" href={p.href} target="_blank" rel="noreferrer">
+					<svelte:element this={p.href ? 'a' : 'div'} class="logo-card" href={p.href} target={p.href ? '_blank' : undefined} rel={p.href ? 'noreferrer' : undefined}>
+						<span class="logo-frame">
+							{#if p.logo}
+								<img class="logo-img" src={p.logo} alt="{p.name} logo" loading="lazy" />
+							{:else}
+								<span class="no-logo">{p.name}</span>
+							{/if}
+						</span>
+						<span class="card-text">
 							<span class="mono-label kind">{p.kind}</span>
 							<span class="slot-name">{p.name}</span>
-						</a>
-					{:else}
-						<span class="mono-label kind">{p.kind}</span>
-						<span class="slot-name">{p.name}</span>
-					{/if}
+						</span>
+					</svelte:element>
 				</li>
 			{/each}
 		</ul>
 
 		<p class="disclaimer mono-label">
-			Real names, real logos — we don't list anyone who hasn't actually said yes.
+			Real names, real logos. We don't list anyone who hasn't actually said yes.
 		</p>
 
 		<div class="cta">
@@ -123,36 +125,61 @@
 		margin-top: var(--head-gap);
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: clamp(1.4rem, 3vw, 2.6rem);
+		gap: clamp(1.6rem, 3.5vw, 2.75rem);
 	}
 
 	.logos li {
-		position: relative;
-		aspect-ratio: 5 / 2;
-		display: grid;
-		align-content: center;
-		justify-items: center;
-		gap: 0.35rem;
 		transform: rotate(var(--tilt));
-		text-align: center;
 	}
 
-	.logo-link {
-		display: grid;
-		justify-items: center;
-		gap: 0.35rem;
-		padding: 1rem;
+	.logo-card {
+		display: block;
+		background: var(--paper);
+		border: 2.5px solid var(--navy);
+		box-shadow: 5px 6px 0 0 rgba(16, 31, 48, 0.18);
 		text-decoration: none;
 		color: inherit;
+		transition:
+			transform 0.15s ease,
+			box-shadow 0.15s ease;
 	}
 
-	.logos li:not(:has(.logo-link)) {
-		padding: 1rem;
+	a.logo-card:hover {
+		transform: translate(-2px, -2px);
+		box-shadow: 7px 8px 0 0 rgba(16, 31, 48, 0.22);
 	}
 
-	.logo-link:hover .slot-name {
-		color: var(--green-deep);
-		border-bottom: 2px solid currentColor;
+	.logo-frame {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 6.5rem;
+		padding: 1rem 1.25rem;
+		border-bottom: 2px solid var(--rule);
+	}
+
+	.logo-img {
+		max-height: 100%;
+		max-width: 100%;
+		width: auto;
+		object-fit: contain;
+	}
+
+	.no-logo {
+		font-family: var(--display);
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: -0.01em;
+		font-size: 1.3rem;
+		color: var(--navy);
+	}
+
+	.card-text {
+		display: grid;
+		justify-items: center;
+		gap: 0.3rem;
+		padding: 0.9rem 1rem 1.1rem;
+		text-align: center;
 	}
 
 	.kind {
@@ -163,8 +190,16 @@
 		font-family: var(--display);
 		font-weight: 800;
 		text-transform: uppercase;
-		font-size: 0.9rem;
-		color: rgba(16, 31, 48, 0.45);
+		font-size: 0.95rem;
+		letter-spacing: -0.005em;
+		color: var(--navy);
+	}
+
+	a.logo-card:hover .slot-name {
+		color: var(--green-deep);
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 3px;
 	}
 
 	.disclaimer {
@@ -188,6 +223,14 @@
 
 		.logos {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+	}
+
+	@media (max-width: 480px) {
+		.logos {
+			grid-template-columns: 1fr;
+			max-width: 20rem;
+			margin-inline: auto;
 		}
 	}
 </style>

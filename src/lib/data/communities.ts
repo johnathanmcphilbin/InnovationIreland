@@ -5,7 +5,7 @@ export type Community = {
 	frequency: string;
 	blurb: string;
 	/* position on the IrelandSketch viewBox, as a percentage.
-	   Derived from real coordinates, then left alone — the map is a drawing,
+	   Derived from real coordinates, then left alone - the map is a drawing,
 	   not a geographic UI, so don't "correct" these by eye. */
 	x: number;
 	y: number;

@@ -17,7 +17,6 @@
 	<div class="shell">
 		{#if variant === 'preview'}
 			<div class="section-head">
-				<p class="eyebrow">How this started</p>
 				<h2 use:inView>
 					We weren't supposed<br />
 					to start

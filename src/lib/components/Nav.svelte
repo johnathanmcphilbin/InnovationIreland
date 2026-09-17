@@ -2,7 +2,6 @@
 	import { slide } from 'svelte/transition';
 	import { page } from '$app/state';
 	import Button from './Button.svelte';
-	import StarDoodle from './art/StarDoodle.svelte';
 	import { nav, links } from '$lib/data/site';
 
 	let open = $state(false);
@@ -11,7 +10,7 @@
 <header class="nav">
 	<div class="shell bar">
 		<a class="wordmark" href="/" onclick={() => (open = false)}>
-			<span class="star"><StarDoodle size="1.05rem" thickness={3} /></span>
+			<span class="star"><img src="/img/brand/mark.png" alt="" /></span>
 			<span class="name"><span>Innovation</span> <span>Ireland</span></span>
 		</a>
 
@@ -96,7 +95,14 @@
 	.star {
 		display: block;
 		flex: none;
+		height: 1.6rem;
 		transition: transform 0.4s ease;
+	}
+
+	.star img {
+		display: block;
+		height: 100%;
+		width: auto;
 	}
 
 	.wordmark:hover .star {

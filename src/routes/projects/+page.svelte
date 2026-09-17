@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Projects — Innovation Ireland</title>
+	<title>Projects - Innovation Ireland</title>
 	<meta
 		name="description"
 		content="A wall of things members of Innovation Ireland have built: robots, apps, games and machines that only work at the right angle."

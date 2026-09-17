@@ -2,7 +2,7 @@
 	import type { Snippet } from 'svelte';
 	import RoughArrow from './art/RoughArrow.svelte';
 
-	/* "Read our story →" — a text link, not a button. The arrow nudges on hover. */
+	/* "Read our story ->" - a text link, not a button. The arrow nudges on hover. */
 	let {
 		href,
 		color = 'var(--green-deep)',

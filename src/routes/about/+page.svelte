@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>About — Innovation Ireland</title>
+	<title>About - Innovation Ireland</title>
 	<meta
 		name="description"
 		content="Our school robotics team got shut down, so we crossed the road. How a weekly group in a Headford clubhouse became a national community of young builders."

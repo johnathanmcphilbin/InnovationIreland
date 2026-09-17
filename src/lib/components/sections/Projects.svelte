@@ -23,7 +23,6 @@
 		{#if variant === 'preview'}
 			<div class="section-head intro">
 				<div>
-					<p class="eyebrow">Projects</p>
 					<h2 class="br-wide">People here actually <br />make stuff.</h2>
 				</div>
 				<p class="copy side">

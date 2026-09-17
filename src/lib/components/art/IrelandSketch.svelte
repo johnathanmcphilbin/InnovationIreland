@@ -33,7 +33,7 @@
 	aria-label="A rough hand-drawn outline of Ireland"
 >
 	{#if ghost}
-		<!-- second pass of the pen, slightly off — makes the line feel drawn twice -->
+		<!-- second pass of the pen, slightly off - makes the line feel drawn twice -->
 		<path class="ghost" d={coast} transform="translate(5 4) rotate(0.6 200 260)" />
 	{/if}
 	<path class="ink" pathLength="1" d={coast} />

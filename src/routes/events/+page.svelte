@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Events — Innovation Ireland</title>
+	<title>Events - Innovation Ireland</title>
 	<meta
 		name="description"
 		content="Hackathons, workshops and build days that put every young builder in Ireland in the same room."

@@ -10,6 +10,7 @@
 	<div class="shell">
 		<div class="top">
 			<div class="brand">
+				<img class="mark" src="/img/brand/mark.png" alt="" />
 				<p class="wordmark">Innovation Ireland</p>
 				<p class="tagline">Built by young people, for young people.</p>
 			</div>
@@ -53,10 +54,16 @@
 
 	.brand {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		flex-wrap: wrap;
-		column-gap: 0.7rem;
-		row-gap: 0.1rem;
+		column-gap: 0.6rem;
+		row-gap: 0.15rem;
+	}
+
+	.mark {
+		display: block;
+		height: 1.4rem;
+		width: auto;
 	}
 
 	.wordmark {

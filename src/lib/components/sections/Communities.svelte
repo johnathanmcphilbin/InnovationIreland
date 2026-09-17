@@ -26,7 +26,6 @@
 	<div class="shell">
 		{#if variant === 'preview'}
 			<div class="section-head">
-				<p class="eyebrow">Communities</p>
 				<h2>Find your people.</h2>
 				<p class="copy intro">
 					Nothing happens in one central office in Dublin. Young people run their own
@@ -116,7 +115,7 @@
 				<div>
 					<p class="copy">
 						You don't need permission, a budget or a committee. You need a room, a night and a
-						couple of people. We'll help with the rest — we've done it four times now.
+						couple of people. We'll help with the rest. We've done it four times now.
 					</p>
 					<div class="start-cta">
 						<Button href={links.startCommunity} variant="orange">Start a community</Button>

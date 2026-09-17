@@ -8,13 +8,12 @@
 	<div class="shell">
 		<div class="grid">
 			<div class="copy-col">
-				<p class="eyebrow">In the news</p>
 				<h2 class="br-wide">80+ students. <br />One weekend. Real city problems.</h2>
 
 				<div class="copy">
 					<p>
 						More than 80 students from across Ireland gathered at Galway's PorterShed for
-						FutureHack — a student-led hackathon challenging young people aged 13 to 19 to
+						FutureHack, a student-led hackathon challenging young people aged 13 to 19 to
 						develop practical solutions to real city challenges: sustainability, traffic,
 						security, infrastructure and urban planning.
 					</p>

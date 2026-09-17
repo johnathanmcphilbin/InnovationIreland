@@ -2,7 +2,7 @@ import { photos } from './photos';
 
 export type Project = {
 	name: string;
-	/* the context the work ended up in — TODO: swap for real builder credits
+	/* the context the work ended up in - TODO: swap for real builder credits
 	   once we have permission to name people. */
 	builder: string;
 	line: string;
