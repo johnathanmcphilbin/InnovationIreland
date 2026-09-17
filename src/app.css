@@ -1,0 +1,266 @@
+/* ==========================================================================
+   Innovation Ireland — base styles & design tokens
+   Heavy display type, cream paper, navy ink, one green, a little orange.
+   No gradients. Anywhere. Ever.
+   ========================================================================== */
+
+:root {
+	/* colour */
+	--navy: #101f30;
+	--navy-soft: #1d3349;
+	--cream: #f7f1e4;
+	--cream-deep: #efe6d3;
+	--paper: #fffaf0;
+	--green: #0f7a3d;
+	--green-deep: #0a5b2d;
+	--orange: #e2612a;
+	--rule: rgba(16, 31, 48, 0.16);
+	--rule-strong: rgba(16, 31, 48, 0.55);
+
+	/* type */
+	--display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+	--body: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+	--hand: 'Caveat', 'Comic Sans MS', cursive;
+	--mono: 'Space Mono', ui-monospace, monospace;
+
+	/* fluid display scale */
+	--step--1: clamp(0.84rem, 0.81rem + 0.15vw, 0.94rem);
+	--step-0: clamp(1rem, 0.96rem + 0.2vw, 1.13rem);
+	--step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+	--step-2: clamp(1.5rem, 1.3rem + 1vw, 2.1rem);
+	--step-3: clamp(2rem, 1.6rem + 2vw, 3.2rem);
+	--step-4: clamp(2.6rem, 1.9rem + 3.4vw, 4.6rem);
+	--step-5: clamp(3.2rem, 2rem + 6vw, 7rem);
+	--step-6: clamp(3.6rem, 1.9rem + 8.4vw, 9.5rem);
+
+	/* display line-height: one value so every giant heading sits the same */
+	--lh-display: 0.96;
+
+	/* rhythm */
+	--gutter: clamp(1.15rem, 4vw, 3.5rem);
+	--measure: 60ch;
+	--measure-copy: 48ch;
+	--measure-lede: 40ch;
+	/* one section rhythm, used by every section on every page */
+	--section-y: clamp(3.25rem, 6.5vw, 5.75rem);
+	--section-y-lg: clamp(4rem, 8vw, 7rem);
+	/* space between a section's heading block and its content */
+	--head-gap: clamp(1.75rem, 3.5vw, 2.75rem);
+	--max: 1280px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background: var(--cream);
+	color: var(--navy);
+	font-family: var(--body);
+	font-size: var(--step-0);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+/* --- headings ------------------------------------------------------------ */
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--display);
+	font-weight: 900;
+	line-height: var(--lh-display);
+	letter-spacing: -0.025em;
+	text-transform: uppercase;
+	margin: 0;
+	text-wrap: balance;
+}
+
+h1 {
+	font-size: var(--step-6);
+}
+h2 {
+	font-size: var(--step-4);
+}
+h3 {
+	font-size: var(--step-2);
+	line-height: 1;
+}
+
+p {
+	margin: 0 0 1.1em;
+	max-width: var(--measure);
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+button {
+	font: inherit;
+	color: inherit;
+}
+
+::selection {
+	background: var(--green);
+	color: var(--paper);
+}
+
+:focus-visible {
+	outline: 3px solid var(--orange);
+	outline-offset: 3px;
+}
+
+/* --- layout helpers ------------------------------------------------------ */
+
+.shell {
+	width: 100%;
+	max-width: var(--max);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.section {
+	padding-block: var(--section-y);
+	position: relative;
+}
+
+.eyebrow {
+	font-family: var(--mono);
+	font-size: 0.7rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	margin: 0 0 1.4rem;
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: var(--green-deep);
+}
+
+.eyebrow::before {
+	content: '';
+	width: 2.2rem;
+	height: 2px;
+	background: currentColor;
+}
+
+/* a section that carries its own background colour needs a little more air */
+.section.roomy {
+	padding-block: var(--section-y-lg);
+}
+
+/* the seam between two stacked sections — the site's structural rhythm */
+.section + .section {
+	border-top: 2.5px solid var(--navy);
+}
+
+/* a page head already supplies the air above the first section */
+.page-head + .section {
+	padding-top: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+/* headings whose hand-set line breaks only work on wide screens —
+   on a phone the text wraps on its own and the breaks make orphans */
+@media (max-width: 700px) {
+	.br-wide br {
+		display: none;
+	}
+}
+
+.lede {
+	font-size: var(--step-1);
+	line-height: 1.5;
+	max-width: var(--measure-lede);
+}
+
+/* standard body copy inside a section: one size, one measure, everywhere */
+.copy {
+	font-size: var(--step-1);
+	line-height: 1.55;
+	max-width: var(--measure-copy);
+}
+
+.copy p {
+	max-width: none;
+}
+
+/* the heading block at the top of a section */
+.section-head {
+	margin-bottom: var(--head-gap);
+}
+
+.hand {
+	font-family: var(--hand);
+	font-size: 1.35rem;
+	line-height: 1.15;
+	font-weight: 600;
+	color: var(--green-deep);
+}
+
+.mono-label {
+	font-family: var(--mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.on-navy {
+	background: var(--navy);
+	color: var(--cream);
+}
+
+.on-navy .eyebrow,
+.on-navy .hand {
+	color: #7dd39b;
+}
+
+/* rough ruled divider drawn with a repeating mask-free border */
+.rule {
+	border: 0;
+	border-top: 2px solid var(--rule-strong);
+	margin: 0;
+}
+
+/* --- motion ------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
