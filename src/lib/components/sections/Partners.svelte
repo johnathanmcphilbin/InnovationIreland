@@ -37,18 +37,29 @@
 			</div>
 		</div>
 
+		<h2 class="logos-title">
+			Proudly supported by<br />&amp; partnered with.
+		</h2>
+
 		<ul class="logos">
 			{#each partners as p, i (p.kind + i)}
 				<li style:--tilt="{(i % 3) - 1}deg">
 					<RoughFrame thickness={2} color="var(--rule-strong)" />
-					<span class="mono-label kind">{p.kind}</span>
-					<span class="slot-name">{p.name}</span>
+					{#if p.href}
+						<a class="logo-link" href={p.href} target="_blank" rel="noreferrer">
+							<span class="mono-label kind">{p.kind}</span>
+							<span class="slot-name">{p.name}</span>
+						</a>
+					{:else}
+						<span class="mono-label kind">{p.kind}</span>
+						<span class="slot-name">{p.name}</span>
+					{/if}
 				</li>
 			{/each}
 		</ul>
 
 		<p class="disclaimer mono-label">
-			Partner logos go here once agreements are signed — we don't list anyone who hasn't said yes.
+			Real names, real logos — we don't list anyone who hasn't actually said yes.
 		</p>
 
 		<div class="cta">
@@ -103,8 +114,13 @@
 		translate: 0 0.15rem;
 	}
 
+	.logos-title {
+		margin-top: clamp(2.5rem, 5vw, 4rem);
+		font-size: var(--step-2);
+	}
+
 	.logos {
-		margin-top: clamp(2.25rem, 4.5vw, 3.5rem);
+		margin-top: var(--head-gap);
 		display: grid;
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: clamp(1.4rem, 3vw, 2.6rem);
@@ -118,8 +134,25 @@
 		justify-items: center;
 		gap: 0.35rem;
 		transform: rotate(var(--tilt));
-		padding: 1rem;
 		text-align: center;
+	}
+
+	.logo-link {
+		display: grid;
+		justify-items: center;
+		gap: 0.35rem;
+		padding: 1rem;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.logos li:not(:has(.logo-link)) {
+		padding: 1rem;
+	}
+
+	.logo-link:hover .slot-name {
+		color: var(--green-deep);
+		border-bottom: 2px solid currentColor;
 	}
 
 	.kind {

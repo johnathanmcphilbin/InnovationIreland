@@ -19,7 +19,7 @@
 	lede="Innovation Ireland is a nonprofit community for ambitious young people across Ireland who want to build things. It started with a room we had to ask for."
 >
 	{#snippet title()}
-		We weren't supposed<br />to start this.
+		We weren't supposed <br />to start this.
 	{/snippet}
 </PageHead>
 

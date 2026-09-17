@@ -24,7 +24,7 @@
 			<div class="section-head intro">
 				<div>
 					<p class="eyebrow">Projects</p>
-					<h2 class="br-wide">People here actually<br />make stuff.</h2>
+					<h2 class="br-wide">People here actually <br />make stuff.</h2>
 				</div>
 				<p class="copy side">
 					Robots, apps, games, machines that only work if you hold them at the right angle. Some

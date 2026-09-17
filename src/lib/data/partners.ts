@@ -1,17 +1,23 @@
 export type Partner = {
-	/* TODO: real partner names + logo files once agreements are signed.
-	   We do not list a company here until they've actually said yes. */
 	name: string;
 	kind: string;
+	/* only set when we've actually been given the URL to link to */
+	href?: string;
 };
 
+/* Real partners, confirmed. Order roughly follows how long we've worked together. */
 export const partners: Partner[] = [
-	{ name: 'Partner slot', kind: 'Venue' },
-	{ name: 'Partner slot', kind: 'Hardware' },
-	{ name: 'Partner slot', kind: 'Food' },
-	{ name: 'Partner slot', kind: 'Mentors' },
-	{ name: 'Partner slot', kind: 'Travel' },
-	{ name: 'Partner slot', kind: 'Prizes' }
+	{ name: 'Moyne Villa F.C.', kind: 'Our first supporter' },
+	{ name: 'Presentation College Headford', kind: 'Supporting Innovation' },
+	{ name: 'Hack Club', kind: 'Fiscal partner' },
+	{ name: 'Patch', kind: 'Sponsor & partner' },
+	{
+		name: 'IdeasLab @ University of Galway',
+		kind: 'Hackathon supporter',
+		href: 'https://www.universityofgalway.ie/Ideaslab'
+	},
+	{ name: 'ISE @ UL', kind: 'Sponsor & partner' },
+	{ name: 'Siren', kind: 'Powering investigations' }
 ];
 
 export const partnerAsks = [

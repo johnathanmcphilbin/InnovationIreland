@@ -17,7 +17,7 @@
 	lede="Robots, apps, games, machines that only work if you hold them at the right angle. Some of it is genuinely impressive. Some of it is held together with tape."
 >
 	{#snippet title()}
-		People here actually<br />make stuff.
+		People here actually <br />make stuff.
 	{/snippet}
 </PageHead>
 

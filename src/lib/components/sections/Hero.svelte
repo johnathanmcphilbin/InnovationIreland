@@ -12,8 +12,8 @@
 <section class="hero" id="top">
 	<div class="shell">
 		<h1 class="br-wide" use:inView>
-			Ireland's community<br />
-			for young people<br />
+			Ireland's community <br />
+			for young people <br />
 			who <span class="build">
 				build.
 				<span class="line"><RoughUnderline thickness={8} reveal="hover" /></span>

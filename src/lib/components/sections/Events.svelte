@@ -21,7 +21,7 @@
 		{#if variant === 'preview'}
 			<div class="section-head">
 				<p class="eyebrow">Events</p>
-				<h2 class="br-wide">Sometimes we put<br />everyone in one room.</h2>
+				<h2 class="br-wide">Sometimes we put <br />everyone in one room.</h2>
 			</div>
 		{/if}
 

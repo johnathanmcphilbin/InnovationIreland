@@ -6,11 +6,18 @@
 	let {
 		href,
 		color = 'var(--green-deep)',
+		external = false,
 		children
-	}: { href: string; color?: string; children: Snippet } = $props();
+	}: { href: string; color?: string; external?: boolean; children: Snippet } = $props();
 </script>
 
-<a class="more-link" {href} style:--ink={color}>
+<a
+	class="more-link"
+	{href}
+	style:--ink={color}
+	target={external ? '_blank' : undefined}
+	rel={external ? 'noreferrer' : undefined}
+>
 	<span>{@render children()}</span>
 	<span class="arrow"><RoughArrow dir="right" size="2.1rem" thickness={2.6} {color} /></span>
 </a>
