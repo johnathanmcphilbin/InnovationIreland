@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Scribble from './art/Scribble.svelte';
 	import HandNote from './art/HandNote.svelte';
 	import { nav, links } from '$lib/data/site';
 
@@ -11,9 +10,8 @@
 	<div class="shell">
 		<div class="top">
 			<div class="brand">
-				<p class="wordmark">Innovation<br />Ireland</p>
+				<p class="wordmark">Innovation Ireland</p>
 				<p class="tagline">Built by young people, for young people.</p>
-				<span class="squiggle"><Scribble variant="loop" width="8rem" color="var(--green)" /></span>
 			</div>
 
 			<nav aria-label="Footer">
@@ -34,7 +32,7 @@
 				Contact details coming soon
 			</p>
 			<p class="sign">
-				<HandNote rotate={-2.5} size="1.2rem">made on a Tuesday night</HandNote>
+				<HandNote rotate={-2.5} size="1rem">made on a Tuesday night</HandNote>
 			</p>
 		</div>
 	</div>
@@ -43,52 +41,58 @@
 <style>
 	.footer {
 		background: var(--cream);
-		padding-block: clamp(2.6rem, 6vw, 4.5rem) 2.2rem;
+		padding-block: clamp(1.25rem, 2.5vw, 1.75rem) 1.1rem;
 	}
 
 	.top {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto;
-		gap: clamp(2rem, 5vw, 5rem);
-		align-items: start;
+		gap: clamp(1.5rem, 4vw, 3.5rem);
+		align-items: center;
+	}
+
+	.brand {
+		display: flex;
+		align-items: baseline;
+		flex-wrap: wrap;
+		column-gap: 0.7rem;
+		row-gap: 0.1rem;
 	}
 
 	.wordmark {
 		font-family: var(--display);
 		font-weight: 900;
 		text-transform: uppercase;
-		letter-spacing: -0.035em;
-		line-height: 0.85;
-		font-size: clamp(2.4rem, 1.2rem + 5vw, 5rem);
-		margin: 0 0 1rem;
+		letter-spacing: -0.02em;
+		line-height: 1;
+		font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+		margin: 0;
 	}
 
 	.tagline {
-		font-size: var(--step-1);
+		font-size: 0.9rem;
 		margin: 0;
 		max-width: 30ch;
-	}
-
-	.squiggle {
-		display: block;
-		margin-top: 1.2rem;
+		color: rgba(16, 31, 48, 0.6);
 	}
 
 	nav ul {
-		display: grid;
-		gap: 0.3rem;
-		text-align: right;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.3rem 1.3rem;
 	}
 
 	nav a {
 		font-family: var(--display);
 		font-weight: 700;
 		text-transform: uppercase;
-		font-size: 0.95rem;
-		letter-spacing: 0.04em;
+		font-size: 0.78rem;
+		letter-spacing: 0.03em;
 		text-decoration: none;
 		border-bottom: 2px solid transparent;
 		transition: border-color 0.18s ease;
+		white-space: nowrap;
 	}
 
 	nav a:hover {
@@ -96,18 +100,22 @@
 	}
 
 	.bottom {
-		margin-top: clamp(2.4rem, 5vw, 4rem);
+		margin-top: clamp(0.85rem, 1.8vw, 1.25rem);
 		border-top: 2px solid var(--rule);
-		padding-top: 1.2rem;
+		padding-top: 0.65rem;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 0.6rem 1.6rem;
+		gap: 0.3rem 1.4rem;
 		color: rgba(16, 31, 48, 0.6);
 	}
 
 	.bottom p {
 		margin: 0;
+	}
+
+	.sign :global(.note) {
+		font-size: 1rem !important;
 	}
 
 	.sign {
@@ -117,16 +125,15 @@
 	@media (max-width: 700px) {
 		.top {
 			grid-template-columns: 1fr;
+			align-items: start;
 		}
 
 		nav ul {
-			text-align: left;
-			grid-template-columns: repeat(2, 1fr);
-			gap: 0.5rem 1rem;
+			justify-content: flex-start;
 		}
 
 		nav a {
-			font-size: 1.05rem;
+			font-size: 0.85rem;
 		}
 
 		.sign {
