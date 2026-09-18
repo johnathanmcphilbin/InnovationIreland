@@ -88,7 +88,9 @@
 							>
 								<span class="name">{c.name}</span>
 								<span class="mono-label county">{c.county}</span>
-								<span class="mono-label freq">{c.frequency}</span>
+								{#if c.frequency}
+									<span class="mono-label freq">{c.frequency}</span>
+								{/if}
 							</button>
 
 							{#if active === c.id}

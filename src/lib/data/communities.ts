@@ -2,6 +2,8 @@ export type Community = {
 	id: string;
 	name: string;
 	county: string;
+	/* how often the group meets - left blank until each community confirms
+	   its own schedule, rather than claiming "weekly" for all of them */
 	frequency: string;
 	blurb: string;
 	/* position on the IrelandSketch viewBox, as a percentage.
@@ -19,9 +21,9 @@ export const communities: Community[] = [
 		id: 'galway-city',
 		name: 'Galway City',
 		county: 'Co. Galway',
-		frequency: 'Weekly',
+		frequency: '',
 		/* TODO: replace with a description written by the people who run this group. */
-		blurb: 'A weekly group in the city. Bring a project, or come and find one.',
+		blurb: 'A group in the city. Bring a project, or come and find one.',
 		x: 30.8,
 		y: 52.9,
 		label: 'left',
@@ -31,7 +33,7 @@ export const communities: Community[] = [
 		id: 'ballina',
 		name: 'Ballina',
 		county: 'Co. Mayo',
-		frequency: 'Weekly',
+		frequency: '',
 		/* TODO: replace with a description written by the people who run this group. */
 		blurb: 'Student-run build nights in north Mayo.',
 		x: 29,
@@ -43,9 +45,9 @@ export const communities: Community[] = [
 		id: 'laois',
 		name: 'Laois',
 		county: 'Co. Laois',
-		frequency: 'Weekly',
+		frequency: '',
 		/* TODO: replace with a description written by the people who run this group. */
-		blurb: 'A weekly group in the midlands.',
+		blurb: 'A group in the midlands.',
 		x: 60,
 		y: 58.1,
 		label: 'right',
@@ -55,9 +57,9 @@ export const communities: Community[] = [
 		id: 'ennis',
 		name: 'Ennis',
 		county: 'Co. Clare',
-		frequency: 'Weekly',
+		frequency: '',
 		/* TODO: replace with a description written by the people who run this group. */
-		blurb: 'A weekly group in Ennis, building whatever people turn up with.',
+		blurb: 'A group in Ennis, building whatever people turn up with.',
 		x: 31.8,
 		y: 62.1,
 		label: 'below',
