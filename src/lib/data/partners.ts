@@ -10,12 +10,23 @@ export type Partner = {
 /* Real partners, confirmed. Order roughly follows how long we've worked together. */
 export const partners: Partner[] = [
 	{
+		name: 'PorterShed',
+		kind: 'Hosts our meets & hackathons',
+		href: 'https://portershed.com/',
+		logo: '/img/partners/portershed.webp'
+	},
+	{
 		name: 'Moyne Villa F.C.',
 		kind: 'Our first supporter',
 		href: 'https://moynevilla.ie/',
 		logo: '/img/partners/moyne-villa.jpg'
 	},
-	{ name: 'Hack Club', kind: 'Fiscal partner' },
+	{
+		name: 'Hack Club',
+		kind: 'Fiscal partner',
+		href: 'https://hackclub.com',
+		logo: '/img/partners/hackclub.png'
+	},
 	{
 		name: 'Patch',
 		kind: 'Sponsor & partner',

@@ -12,12 +12,23 @@
 			"href": "https://luma.com/00n003fj"
 		},
 		{
+			"name": "ElevenLabs Hackathon",
+			"city": "TBC",
+			"venue": "Venue TBC",
+			"audience": "Details TBC",
+			"when": "21 November",
+			"dateNote": "More details soon",
+			"description": "A hackathon we're running with ElevenLabs. We're still pulling the details together, check back soon.",
+			"cta": "Keep me posted",
+			"href": "/communities"
+		},
+		{
 			"name": "Innovation Ireland Hackathon",
 			"city": "Dublin",
 			"venue": "Dogpatch Labs",
 			"audience": "150-200 young builders",
-			"when": "21 November",
-			"dateNote": "More details soon",
+			"when": "Early December",
+			"dateNote": "Date TBD",
 			"description": "One room. Everyone who builds something in Ireland, in the same place, for a weekend. Bring an idea or find one when you get there.",
 			"cta": "I want to be there",
 			"href": "/communities",
