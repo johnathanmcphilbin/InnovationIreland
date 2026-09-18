@@ -4,7 +4,7 @@
 	/* Flat rectangular buttons. No shadow, no rounded corners, no gradient.
 	   Their one move: a solid-colour square block travels through the button
 	   on hover, and the letters it crosses swap to a second, high-contrast
-	   colour for as long as the square sits under them — a real colour
+	   colour for as long as the square sits under them - a real colour
 	   change, not a blend trick, so it reads clearly on every background. */
 	let {
 		href = undefined,

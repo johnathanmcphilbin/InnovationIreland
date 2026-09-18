@@ -2,7 +2,7 @@ import { photos } from './photos';
 import raw from './events.json';
 
 /* The actual event content lives in events.json, not here, so it can be
-   edited without touching TypeScript — by hand, or via `npm run add-event`.
+   edited without touching TypeScript - by hand, or via `npm run add-event`.
    This file just adds the types on top. */
 
 export type UpcomingEvent = {
@@ -28,7 +28,7 @@ export type PastEvent = {
 	tilt: number;
 };
 
-/* Soonest first — this drives which one gets the big featured card. */
+/* Soonest first - this drives which one gets the big featured card. */
 export const upcomingEvents: UpcomingEvent[] = raw.upcomingEvents;
 
 /* Real photographs from events we've actually run. `photo` must match a key

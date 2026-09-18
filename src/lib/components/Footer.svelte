@@ -2,7 +2,11 @@
 	import HandNote from './art/HandNote.svelte';
 	import { nav, links } from '$lib/data/site';
 
-	const footerLinks = [...nav, { label: 'Contact', href: links.contact }];
+	const footerLinks = [
+		...nav,
+		{ label: 'Contact', href: links.contact },
+		{ label: 'Privacy', href: '/privacy' }
+	];
 	const year = new Date().getFullYear();
 </script>
 

@@ -1,12 +1,23 @@
 <script lang="ts">
+	import { page } from '$app/state';
+	import { afterNavigate } from '$app/navigation';
 	import '../app.css';
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import CookieBanner from '$lib/components/CookieBanner.svelte';
+	import { trackPageviewIfConsented } from '$lib/analytics';
 
 	let { children } = $props();
+
+	// fires on the initial load too, so this alone covers every pageview,
+	// and does nothing at all until the visitor has accepted the cookie banner
+	afterNavigate(() => {
+		trackPageviewIfConsented(page.url.href);
+	});
 </script>
 
 <a class="skip" href="#main">Skip to content</a>
+<CookieBanner />
 <Nav />
 <main id="main">
 	{@render children()}
