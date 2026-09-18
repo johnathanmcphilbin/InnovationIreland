@@ -66,7 +66,9 @@
 
 		<div class="cta">
 			<Button href={links.partner} size="lg">Become a partner</Button>
-			<Button href={links.sponsorship} variant="secondary" size="lg">View sponsorship</Button>
+			<Button href={links.sponsorship} variant="secondary" size="lg" target="_blank" rel="noreferrer">
+				Why partner with us (PDF)
+			</Button>
 		</div>
 	</div>
 </section>

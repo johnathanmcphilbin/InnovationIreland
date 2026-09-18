@@ -32,7 +32,12 @@
 				</div>
 
 				<div class="links">
-					<MoreLink href="https://lnkd.in/ejx5u-XC" external>Read the full write-up</MoreLink>
+					<MoreLink
+						href="https://www.thinkbusiness.ie/articles/futurehack-galway-student-hackathon-young-innovators-city-challenges/"
+						external
+					>
+						Read the full write-up
+					</MoreLink>
 					<MoreLink
 						href="https://www.universityofgalway.ie/Ideaslab"
 						color="var(--orange)"

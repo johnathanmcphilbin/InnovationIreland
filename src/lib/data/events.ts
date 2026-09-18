@@ -1,26 +1,24 @@
 import { photos } from './photos';
+import raw from './events.json';
 
-export type FeaturedEvent = {
+/* The actual event content lives in events.json, not here, so it can be
+   edited without touching TypeScript — by hand, or via `npm run add-event`.
+   This file just adds the types on top. */
+
+export type UpcomingEvent = {
 	name: string;
 	city: string;
 	venue: string;
-	size: string;
+	audience: string;
 	when: string;
+	/** empty string means "no note" */
 	dateNote: string;
 	description: string;
 	cta: string;
-};
-
-export const featuredEvent: FeaturedEvent = {
-	name: 'Innovation Ireland Hackathon',
-	city: 'Dublin',
-	venue: 'Dogpatch Labs',
-	size: '150–200 young builders',
-	when: 'Late November / early December',
-	dateNote: 'Date TBD',
-	description:
-		'One room. Everyone who builds something in Ireland, in the same place, for a weekend. Bring an idea or find one when you get there.',
-	cta: 'I want to be there'
+	href: string;
+	/** optional downloadable extra, e.g. a sponsorship pack */
+	pdf?: string;
+	pdfLabel?: string;
 };
 
 export type PastEvent = {
@@ -30,11 +28,9 @@ export type PastEvent = {
 	tilt: number;
 };
 
-/* Real photographs from events we've actually run.
-   TODO: add dates and venues for each of these. */
-export const pastEvents: PastEvent[] = [
-	{ title: 'FutureHack', place: 'Hackathon', photo: 'futurehackGroup', tilt: -1.5 },
-	{ title: 'FutureHack', place: 'Judging', photo: 'futurehackJudges', tilt: 1.2 },
-	{ title: 'Opening day', place: 'Talk', photo: 'openingDayTalk', tilt: -0.8 },
-	{ title: 'Headford', place: 'Day one', photo: 'dayOne', tilt: 2 }
-];
+/* Soonest first — this drives which one gets the big featured card. */
+export const upcomingEvents: UpcomingEvent[] = raw.upcomingEvents;
+
+/* Real photographs from events we've actually run. `photo` must match a key
+   in src/lib/data/photos.ts. */
+export const pastEvents: PastEvent[] = raw.pastEvents as PastEvent[];

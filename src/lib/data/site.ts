@@ -14,8 +14,9 @@ export const links = {
 	join: '/communities',
 	startCommunity: '/communities#start-one',
 	partner: '/partners',
-	sponsorship: '/partners', // TODO: link the sponsorship deck (PDF) here
-	contact: '/about' // TODO: real contact email
+	sponsorship: '/docs/why-partner-with-innovation-ireland.pdf',
+	contact: 'mailto:info@innovationireland.org',
+	contactEmail: 'info@innovationireland.org'
 };
 
 export const proof = [

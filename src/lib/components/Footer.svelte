@@ -28,9 +28,9 @@
 			<p class="mono-label">
 				Innovation Ireland · Nonprofit · Headford, Co. Galway · {year}
 			</p>
-			<p class="mono-label todo">
-				<!-- TODO: real contact email, socials and charity/CLG registration details -->
-				Contact details coming soon
+			<p class="mono-label">
+				<!-- TODO: socials and charity/CLG registration details -->
+				<a class="email" href={links.contact}>{links.contactEmail}</a>
 			</p>
 			<p class="sign">
 				<HandNote rotate={-2.5} size="1rem">made on a Tuesday night</HandNote>
@@ -119,6 +119,16 @@
 
 	.bottom p {
 		margin: 0;
+	}
+
+	.email {
+		text-decoration: none;
+		border-bottom: 2px solid transparent;
+		transition: border-color 0.18s ease;
+	}
+
+	.email:hover {
+		border-bottom-color: var(--orange);
 	}
 
 	.sign :global(.note) {

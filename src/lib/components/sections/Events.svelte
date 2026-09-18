@@ -6,14 +6,16 @@
 	import HandNote from '../art/HandNote.svelte';
 	import RoughUnderline from '../art/RoughUnderline.svelte';
 	import MoreLink from '../MoreLink.svelte';
-	import { featuredEvent, pastEvents } from '$lib/data/events';
-	import { links } from '$lib/data/site';
+	import { upcomingEvents, pastEvents } from '$lib/data/events';
 	import { photos } from '$lib/data/photos';
 	import { inView } from '$lib/actions';
 
 	/* preview = homepage: the next event only.
-	   full = /events: the next event plus everything before it. */
+	   full = /events: the next event, what's after it, and everything before it. */
 	let { variant = 'full' }: { variant?: 'preview' | 'full' } = $props();
+
+	const next = upcomingEvents[0];
+	const later = upcomingEvents.slice(1);
 </script>
 
 <section class="section events" id="events">
@@ -28,38 +30,46 @@
 			<span class="tape-corner"><Tape rotate={-7} width="6.5rem" /></span>
 
 			<header>
-				<p class="mono-label kicker">Next big one · {featuredEvent.name}</p>
-				<h3 class="city">{featuredEvent.city}</h3>
+				<p class="mono-label kicker">Next up · {next.name}</p>
+				<h3 class="city">{next.city}</h3>
 			</header>
 
 			<dl class="facts">
 				<div>
 					<dt class="mono-label">Who</dt>
-					<dd>{featuredEvent.size}</dd>
+					<dd>{next.audience}</dd>
 				</div>
 				<div>
 					<dt class="mono-label">Where</dt>
-					<dd>{featuredEvent.venue}</dd>
+					<dd>{next.venue}</dd>
 				</div>
 				<div>
 					<dt class="mono-label">When</dt>
 					<dd>
-						{featuredEvent.when}
-						<span class="tbd">
-							<HandNote rotate={-4} size="1.15rem" color="#7dd39b">
-								{featuredEvent.dateNote}
-							</HandNote>
-						</span>
+						{next.when}
+						{#if next.dateNote}
+							<span class="tbd">
+								<HandNote rotate={-4} size="1.15rem" color="#7dd39b">
+									{next.dateNote}
+								</HandNote>
+							</span>
+						{/if}
 					</dd>
 				</div>
 			</dl>
 
-			<p class="feat-copy">{featuredEvent.description}</p>
+			<p class="feat-copy">{next.description}</p>
 
 			<div class="feat-cta">
-				<Button href={links.join} size="lg" variant="orange">{featuredEvent.cta}</Button>
+				<Button href={next.href} size="lg" variant="orange">{next.cta}</Button>
 				<span class="star"><StarDoodle color="#7dd39b" size="1.5rem" spin /></span>
 			</div>
+
+			{#if next.pdf}
+				<p class="pdf-link">
+					<MoreLink href={next.pdf} color="#7dd39b" external>{next.pdfLabel ?? 'Download PDF'}</MoreLink>
+				</p>
+			{/if}
 		</article>
 
 		{#if variant === 'preview'}
@@ -67,6 +77,32 @@
 				<MoreLink href="/events">All events</MoreLink>
 			</p>
 		{:else}
+			{#if later.length > 0}
+				<div class="also">
+					<h3 class="also-head mono-label">Coming soon</h3>
+					<ul class="also-list">
+						{#each later as ev (ev.name)}
+							<li>
+								<div class="also-info">
+									<span class="also-name">{ev.name}</span>
+									<span class="mono-label also-meta">{ev.city} · {ev.venue}</span>
+								</div>
+								<div class="also-when">
+									<span class="mono-label">{ev.when}</span>
+									{#if ev.dateNote}
+										<span class="mono-label also-note">{ev.dateNote}</span>
+									{/if}
+									{#if ev.pdf}
+										<span class="also-pdf">
+											<MoreLink href={ev.pdf} external>{ev.pdfLabel ?? 'Download PDF'}</MoreLink>
+										</span>
+									{/if}
+								</div>
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/if}
 			<div class="past">
 				<h2 class="past-head" use:inView>
 					<span class="past-word">
@@ -171,8 +207,67 @@
 		display: block;
 	}
 
+	.pdf-link {
+		max-width: none;
+	}
+
 	.link {
 		margin-top: clamp(1.5rem, 3vw, 2.25rem);
+	}
+
+	.also {
+		margin-top: clamp(2rem, 4vw, 3rem);
+	}
+
+	.also-head {
+		color: var(--green-deep);
+		margin-bottom: 0.9rem;
+	}
+
+	.also-list li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.4rem 1.5rem;
+		padding-block: 1rem;
+		border-top: 2px solid var(--rule);
+	}
+
+	.also-list li:last-child {
+		border-bottom: 2px solid var(--rule);
+	}
+
+	.also-info {
+		display: grid;
+		gap: 0.3rem;
+	}
+
+	.also-name {
+		font-family: var(--display);
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: -0.01em;
+		font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+	}
+
+	.also-meta {
+		color: rgba(16, 31, 48, 0.6);
+	}
+
+	.also-when {
+		text-align: right;
+		display: grid;
+		gap: 0.2rem;
+	}
+
+	.also-note {
+		color: var(--green-deep);
+	}
+
+	.also-pdf {
+		margin-top: 0.15rem;
+		justify-self: end;
 	}
 
 	.past {

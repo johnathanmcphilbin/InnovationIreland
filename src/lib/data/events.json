@@ -1,0 +1,34 @@
+{
+	"upcomingEvents": [
+		{
+			"name": "Innovation Galway Club Evening",
+			"city": "Galway",
+			"venue": "PorterShed",
+			"audience": "Secondary school students",
+			"when": "Friday 9 October, 3-6pm",
+			"dateNote": "",
+			"description": "Come build something. Bring a project you're already working on, start something completely new, find people to build with, or just come along and see what everyone else is making. There'll be workshops on pitching and demos throughout the evening, and experienced builders around if you need guidance. You don't need loads of experience, a team or even an idea before you arrive.",
+			"cta": "I want to be there",
+			"href": "https://luma.com/00n003fj"
+		},
+		{
+			"name": "Innovation Ireland Hackathon",
+			"city": "Dublin",
+			"venue": "Dogpatch Labs",
+			"audience": "150-200 young builders",
+			"when": "21 November",
+			"dateNote": "More details soon",
+			"description": "One room. Everyone who builds something in Ireland, in the same place, for a weekend. Bring an idea or find one when you get there.",
+			"cta": "I want to be there",
+			"href": "/communities",
+			"pdf": "/docs/dublin-hackathon-sponsorship-pack.pdf",
+			"pdfLabel": "Sponsorship pack (PDF)"
+		}
+	],
+	"pastEvents": [
+		{ "title": "FutureHack", "place": "Hackathon", "photo": "futurehackGroup", "tilt": -1.5 },
+		{ "title": "FutureHack", "place": "Judging", "photo": "futurehackJudges", "tilt": 1.2 },
+		{ "title": "Opening day", "place": "Talk", "photo": "openingDayTalk", "tilt": -0.8 },
+		{ "title": "Headford", "place": "Day one", "photo": "dayOne", "tilt": 2 }
+	]
+}
