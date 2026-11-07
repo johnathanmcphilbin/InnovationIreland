@@ -15,6 +15,16 @@
 		<div class="buttons">
 			<Button href={links.join} size="lg" variant="primary">Join a community</Button>
 			<Button href={links.startCommunity} size="lg" variant="orange">Start a community</Button>
+			<Button
+				href={links.donate}
+				size="lg"
+				variant="ghost"
+				target="_blank"
+				rel="noreferrer"
+				aria-label="Donate, opens in a new tab"
+			>
+				Donate
+			</Button>
 		</div>
 
 		<div class="aside">

@@ -26,6 +26,15 @@
 		</nav>
 
 		<div class="cta">
+			<a
+				class="donate"
+				href={links.donate}
+				target="_blank"
+				rel="noreferrer"
+				aria-label="Donate, opens in a new tab"
+			>
+				Donate
+			</a>
 			<Button href={links.join} size="sm">Join us</Button>
 		</div>
 
@@ -56,6 +65,16 @@
 						{link.label}
 					</a>
 				{/each}
+				<a
+					class="donate"
+					href={links.donate}
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Donate, opens in a new tab"
+					onclick={() => (open = false)}
+				>
+					Donate
+				</a>
 				<Button href={links.join} onclick={() => (open = false)}>Join us</Button>
 			</div>
 		</div>
@@ -130,6 +149,23 @@
 		border-bottom-color: var(--green);
 	}
 
+	.cta {
+		display: flex;
+		align-items: center;
+		gap: 0.95rem;
+	}
+
+	.cta .donate {
+		font-family: var(--display);
+		font-weight: 800;
+		font-size: 0.78rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding-block: 0.4rem;
+		border-bottom: 2.5px solid var(--orange);
+	}
+
 	.burger {
 		display: none;
 		align-items: center;
@@ -165,12 +201,18 @@
 		gap: 0.2rem;
 	}
 
+	.panel a.donate {
+		border-bottom-color: var(--orange);
+	}
+
 	.panel :global(.btn) {
 		margin-top: 1.1rem;
 		justify-self: start;
 	}
 
-	@media (max-width: 860px) {
+	/* Donate sits with Join us, so the bar runs out of room sooner than
+	   the old link row. Collapse to the menu before the wordmark wraps. */
+	@media (max-width: 1120px) {
 		.links,
 		.cta {
 			display: none;
