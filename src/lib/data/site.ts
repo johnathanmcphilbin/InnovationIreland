@@ -15,6 +15,7 @@ export const links = {
 	startCommunity: '/communities#start-one',
 	partner: '/partners',
 	sponsorship: '/docs/why-partner-with-innovation-ireland.pdf',
+	donate: 'https://hcb.hackclub.com/donations/start/spark-innovation-hub',
 	contact: 'mailto:info@innovationireland.org',
 	contactEmail: 'info@innovationireland.org'
 };

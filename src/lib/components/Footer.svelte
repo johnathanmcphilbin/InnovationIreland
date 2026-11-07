@@ -2,8 +2,9 @@
 	import HandNote from './art/HandNote.svelte';
 	import { nav, links } from '$lib/data/site';
 
-	const footerLinks = [
+	const footerLinks: { label: string; href: string; external?: boolean }[] = [
 		...nav,
+		{ label: 'Donate', href: links.donate, external: true },
 		{ label: 'Contact', href: links.contact },
 		{ label: 'Privacy', href: '/privacy' }
 	];
@@ -22,7 +23,17 @@
 			<nav aria-label="Footer">
 				<ul>
 					{#each footerLinks as link (link.href + link.label)}
-						<li><a href={link.href}>{link.label}</a></li>
+						<li>
+							<a
+								href={link.href}
+								class:donate={link.external}
+								target={link.external ? '_blank' : undefined}
+								rel={link.external ? 'noreferrer' : undefined}
+								aria-label={link.external ? `${link.label}, opens in a new tab` : undefined}
+							>
+								{link.label}
+							</a>
+						</li>
 					{/each}
 				</ul>
 			</nav>
@@ -106,7 +117,8 @@
 		white-space: nowrap;
 	}
 
-	nav a:hover {
+	nav a:hover,
+	nav a.donate {
 		border-bottom-color: var(--orange);
 	}
 
